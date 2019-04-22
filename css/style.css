@@ -177,12 +177,89 @@ main > .menu > .wrapper > .menuContainer > div > p > img {
 	margin-left: 14px;
 	transform: rotateZ(270deg);
 }
-
-
-.test {
+main > .intro {
 	background-color: #f3f3f3;
-	height: 500px;
 	width: 100%;
+	margin: auto;
+}
+main > .intro > .wrapper {
+	max-width: 1170px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+main > .intro > .wrapper > p:first-of-type {
+	margin-top: 125px;
+	margin-bottom: 20px;
+	color: #505961;
+	font-size: 38px;
+	font-family: openSans-Light;
+	margin-right: 4%;
+	text-align: center;
+}
+main > .intro > .wrapper > p:last-of-type {
+	margin-bottom: 90px;
+	max-width: 550px;
+	color: #8b9297;
+	font-size: 16px;
+	font-family: openSans-Light;
+	text-align: center;
+	margin-right: 0px;
+	line-height: 24px;
+}
+main > .live {
+	width: 100%;
+	background-color: #f3f3f3;
+}
+main > .live > .wrapper {
+	margin: auto;
+	background-color: inherit;
+	max-width: 1170px;
+	display: grid;
+	grid-template-areas: "A B C";
+}
+main > .live > .wrapper > div:first-of-type {
+	grid-area: A;
+}
+main > .live > .wrapper > div:first-of-type + div {
+	grid-area: B;
+}
+main > .live > .wrapper > div:last-of-type {
+	grid-area: C;
+} 
+main > .live > .wrapper > div {
+	width: 370px;
+	height: 255px;
+	border-bottom: 4px solid #00bff0;
+	margin-bottom: 75px;
+}
+main > .live > .wrapper > div > .title {
+	height: 50px;
+	width: 100%;
+	background-color: #72d0f4;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+main > .live > .wrapper > div > .title > p:first-of-type {
+	font-size: 18px;
+	font-family: openSans-Semibold;
+	margin-left: 20px;
+	text-transform: uppercase;
+}
+main > .live > .wrapper > div > .title > p:first-of-type > span {
+	font-family: openSans-Italic;
+}
+main > .live > .wrapper > div > .title > p:last-of-type {
+	font-size: 11px;
+	font-family: openSans-Bold;
+	margin-right: 16px;
+}
+main > .live > .wrapper > div > iframe {
+	width: 100%;
+	height: 205px;
 }
 
 
@@ -191,6 +268,19 @@ main > .menu > .wrapper > .menuContainer > div > p > img {
 
 
 
+
+@media screen and (max-width: 1115px) {
+	main > .live > .wrapper {
+		grid-template-areas: "A B" "C C";
+		justify-content: space-around;
+	}
+	main > .live > .wrapper > div:last-of-type {
+		justify-self: center;
+	}
+	main > .live > .wrapper > div:first-of-type, main > .live > .wrapper > div:first-of-type + div {
+		margin-bottom: 25px;
+	}
+}
 @media screen and (max-width: 960px) {
 	header > div {
 		width: 415px;
@@ -232,6 +322,24 @@ main > .menu > .wrapper > .menuContainer > div > p > img {
 	main > .socialNetworks {
 		display: none;
 	}
+	main > .intro > .wrapper {
+		align-items: center;
+	}
+	main > .intro > .wrapper > p:first-of-type {
+		margin-right: 0px;
+		margin-top: 105px;
+	}
+	main > .intro > .wrapper > p:last-of-type {
+		margin-right: 0px;
+		margin-bottom: 75px;
+	}
+	main > .live > .wrapper {
+		grid-template-areas: "A" "B" "C";
+		justify-content: center;
+	}
+	main > .live > .wrapper > div {
+		margin-bottom: 50px;
+	}
 }
 @media screen and (max-width: 480px) {
 	main > .menu > .wrapper > .menuContainer {
@@ -268,6 +376,10 @@ main > .menu > .wrapper > .menuContainer > div > p > img {
 	main > .menu > .wrapper > div:first-of-type > img {
 		margin-left: 15px;
 	}
+	main > .live > .wrapper > div {
+		max-width: 370px;
+		width: auto;
+	}
 }
 
 
@@ -288,4 +400,12 @@ main > .menu > .wrapper > .menuContainer > div > p > img {
 @font-face {
 	font-family: openSans-Regular;
 	src: url("../fonts/openSans/OpenSans-Regular.ttf");
+}
+@font-face {
+	font-family: openSans-Italic;
+	src: url("../fonts/openSans/OpenSans-Italic.ttf");
+}
+@font-face {
+	font-family: openSans-Bold;
+	src: url("../fonts/openSans/OpenSans-Bold.ttf");
 }
