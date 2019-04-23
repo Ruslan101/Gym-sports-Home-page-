@@ -261,6 +261,110 @@ main > .live > .wrapper > div > iframe {
 	width: 100%;
 	height: 205px;
 }
+main > .classes_trainers {
+	width: 100%;
+	background-color: #f3f3f3;
+}
+main > .classes_trainers > .wrapper {
+	max-width: 1170px;
+	margin: auto;
+	display: grid;
+	grid-template-areas: "title_a title_a title_b" "A B C";
+}
+main > .classes_trainers > .wrapper > p {
+	font-size: 30px;
+	color: #57cbf4;
+	font-family: openSansCondensed-Light;
+	margin-bottom: 25px;
+	text-align: center;
+	text-transform: uppercase;
+}
+main > .classes_trainers > .wrapper > p:first-of-type {
+	grid-area: title_a;
+}
+main > .classes_trainers > .wrapper > p:last-of-type {
+	grid-area: title_b;
+}
+main > .classes_trainers > .wrapper > div {
+	margin-bottom: 80px;
+	height: 250px;
+}
+main > .classes_trainers > .wrapper > div:first-of-type, main > .classes_trainers > .wrapper > div:first-of-type + div {
+	background-color: #72d0f4;
+	width: 380px;
+	color: white;
+	font-size: 14px;
+	font-family: openSans-Regular;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+}
+main > .classes_trainers > .wrapper > div:first-of-type {
+	grid-area: A;
+}
+main > .classes_trainers > .wrapper > div:first-of-type + div {
+	grid-area: B;
+}
+main > .classes_trainers > .wrapper > div:last-of-type {
+	background-color: #00bff0;
+	grid-area: C;
+	width: 370px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+main > .classes_trainers > .wrapper > div > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 60px;
+	align-items: center;
+	margin: 0px 30px;
+	border-bottom: 1px solid white;
+}
+main > .classes_trainers > .wrapper > div > div:last-of-type {
+	margin-bottom: 18px;
+}
+main > .classes_trainers > .wrapper > div > div > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+main > .classes_trainers > .wrapper > div > div > div:first-of-type > img {
+	margin-right: 7px;
+	cursor: pointer;
+}
+main > .classes_trainers > .wrapper > div > div > div:last-of-type > img {
+	margin-right: 22px;
+	cursor: pointer;
+}
+main > .classes_trainers > .wrapper > div > div > div:last-of-type > img:last-of-type {
+	margin: 0px;
+}
+main > .classes_trainers > .wrapper > div:last-of-type > p:first-of-type {
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: center;
+	font-family: openSans-Regular;
+	margin: 60px 0px 0px;
+}
+main > .classes_trainers > .wrapper > div:last-of-type > p:last-of-type {
+	width: 250px;
+	margin: 23px auto;
+	font-size: 16px;
+	font-family: openSans-Light;
+	line-height: 24px;
+	text-align: center;
+}
+main > .classes_trainers > .wrapper > div:last-of-type > button {
+	color: white;
+	width: 84px;
+	height: 39px;
+	border: 1px solid #c9f1fc;
+	background-color: inherit;
+	border-radius: 5px;
+	align-self: center;
+}
 
 
 
@@ -269,7 +373,15 @@ main > .live > .wrapper > div > iframe {
 
 
 
-@media screen and (max-width: 1115px) {
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1150px) {
 	main > .live > .wrapper {
 		grid-template-areas: "A B" "C C";
 		justify-content: space-around;
@@ -279,6 +391,16 @@ main > .live > .wrapper > div > iframe {
 	}
 	main > .live > .wrapper > div:first-of-type, main > .live > .wrapper > div:first-of-type + div {
 		margin-bottom: 25px;
+	}
+	main > .classes_trainers > .wrapper {
+		grid-template-areas: "title_a title_a" "A B" "title_b title_b" "C C";
+		justify-content: space-around;
+	}
+	main > .classes_trainers > .wrapper > div:last-of-type {
+		justify-self: center;
+	}
+	main > .classes_trainers > .wrapper > div {
+		margin-bottom: 40px;
 	}
 }
 @media screen and (max-width: 960px) {
@@ -303,6 +425,12 @@ main > .live > .wrapper > div > iframe {
 	main > .menu > .wrapper > div:first-of-type {
 		display: none;
 	}
+}
+@media screen and (max-width: 790px) {
+	main > .classes_trainers > .wrapper {
+		grid-template-areas: "title_a" "A" "B" "title_b" "C";
+	}
+
 }
 @media screen and (max-width: 760px) {
 	header {
