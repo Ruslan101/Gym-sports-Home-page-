@@ -568,7 +568,75 @@ main > .classes_trainers > .wrapper > div:last-of-type > button {
 .classes_trainers_bottom > .wrapper > div:last-of-type > div > p > span {
 	color: black;
 }
-
+.gallery {
+	width: 100%;
+	background-color: #e6e6e6;
+}
+.gallery > .wrapper {
+	max-width: 1170px;
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+	justify-content: space-around;
+}
+.gallery > .wrapper > .galleryCh, .gallery > .wrapper > .partner {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 115px;
+	align-items: center;
+}
+.gallery > .wrapper > .galleryCh > p, .gallery > .wrapper > .partner > p {
+	color: #57cbf4;
+	font-size: 30px;
+	font-family: openSansCondensed-Light;
+	margin-top: 40px;
+	margin-bottom: 25px;
+}
+.gallery > .wrapper > .galleryCh > div {
+	display: flex;
+	flex-direction: row;
+	position: relative;	
+}
+.gallery > .wrapper > .galleryCh > div > div {
+	position: absolute;
+	background-color: white;
+	opacity: 0.6;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 35px;
+	cursor: pointer;
+}
+.gallery > .wrapper > .galleryCh > div > img {
+	max-width: 255px;
+	max-height: 170px;
+	margin: 2px;
+}
+.gallery > .wrapper > .galleryCh > div > div:hover {
+	opacity: 1;
+}
+.gallery > .wrapper > .galleryCh > div > div > img {
+	width: 20px;
+	height: 36px;
+}
+.gallery > .wrapper > .partner > div {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+}
+#leftPointer {
+	top: 80.5%;
+	z-index: 1;
+	left: 2%;
+}
+#rightPointer {
+	left: 90%;
+	bottom: 82.5%;
+	z-index: 1;
+}
 
 
 
@@ -644,6 +712,33 @@ main > .classes_trainers > .wrapper > div:last-of-type > button {
 	}
 	main > .menu > .wrapper > div:first-of-type {
 		display: none;
+	}
+	.gallery > .wrapper {
+		flex-direction: column;
+	}
+	.gallery > .wrapper > .galleryCh {
+		margin-bottom: 0px;
+	}
+	.gallery > .wrapper > .partner > div {
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+	}
+	.gallery > .wrapper > .partner {
+		margin-bottom: 40px;
+	}
+}
+@media screen and (max-width: 790px) {
+	.gallery > .wrapper > .galleryCh > div {
+		flex-direction: column;
+	}
+	#leftPointer, #rightPointer {
+		display: none;
+	}
+	.gallery > .wrapper > .partner > div {
+		flex-direction: column;
+		height: 365px;
 	}
 }
 @media screen and (max-width: 760px) {
