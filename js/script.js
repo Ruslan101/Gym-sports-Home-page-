@@ -6,10 +6,25 @@ var pointer = 0; // Указывает на левый элемент
 $(window).on("load", () => {
 	$(".menuContainer > p").on("click", (event) => dropMenu(event));
 	$("#menu_but").on("click", () => dropMenuMobile());
+	initMap();
 	//$("#left_but").on("click", () => generateRandomUser(1));
 	//$("#right_but").on("click", () => generateRandomUser(2));
 	//generateRandomUser(0);
 });
+
+function initMap() {
+	var uluru = {lat: 34.054901, lng: -118.248936}; //34°03'09.4"N 118°09'30.2"W
+	var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: uluru});
+	var marker = new google.maps.Marker({
+		position: uluru,
+		map: map,
+		icon: {
+			url: "img/map-marker.png",
+			scaledSize: new google.maps.Size(95, 144)
+		}
+	});
+}
+
 
 function dropMenuMobile () {
 	$(".menuContainer").slideToggle(600);
