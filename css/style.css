@@ -615,8 +615,8 @@ main > .classes_trainers > .wrapper > div:last-of-type > button {
 	cursor: pointer;
 }
 .gallery > .wrapper > .galleryCh > div > img {
-	max-width: 255px;
-	max-height: 170px;
+	width: 255px;
+	height: 170px;
 	margin: 2px;
 }
 .gallery > .wrapper > .galleryCh > div > div:hover {

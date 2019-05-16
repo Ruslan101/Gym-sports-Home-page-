@@ -2,6 +2,8 @@ sessionStorage.setItem("stateMenu", "true");
 sessionStorage.setItem("stateMobile", "false");
 var users = new Array();
 var pointer = 0; // Указывает на левый элемент
+var galleryCounter = 0;
+var galleryArr = [1, 2, 3, 4, 5, 6];
 
 $(window).on("load", () => {
 	$(".menuContainer > p").on("click", (event) => dropMenu(event));
@@ -9,6 +11,8 @@ $(window).on("load", () => {
 	if (window.innerWidth > 480) initMap();
 	$("#left_but").on("click", () => generateRandomUser(0));
 	$("#right_but").on("click", () => generateRandomUser(1));
+	$("#rightPointer").on("click", () => slider(0));
+	$("#leftPointer").on("click", () => slider(1));
 	generateRandomUser();
 });
 
@@ -61,6 +65,7 @@ function dropMenu (element) {
 		}
 	}
 }
+
 function sendRequest (func) { 
 	$.ajax({
 		method: 'GET',
@@ -74,6 +79,7 @@ function sendRequest (func) {
 function generateRandomUser (state = -1) {
 	sendRequest((data) => drawUsers(data, state));
 }
+
 function drawUsers (response, state) {
 		if(state == 0) { // then lefft 
 			$("#avatar_1").attr("src", $("#avatar_2")[0].currentSrc);
@@ -87,5 +93,30 @@ function drawUsers (response, state) {
 			$("#avatar_2").attr("src", $("#avatar_1")[0].currentSrc);
 			$("#name_2").text($("#name_1")[0].textContent);
 		}
-		return 0;
+	return 0;
+}
+
+function slider (state) {
+	if(state == 0) {
+		if (galleryCounter == 12) return 1;
+		$("#img_1").attr("src", [`img/gallery/${galleryArr[0]++}.jpg`]);
+		$("#img_2").attr("src", [`img/gallery/${galleryArr[1]++}.jpg`]);
+		$("#img_3").attr("src", [`img/gallery/${galleryArr[2]++}.jpg`]);
+		$("#img_4").attr("src", [`img/gallery/${galleryArr[3]++}.jpg`]);
+		$("#img_5").attr("src", [`img/gallery/${galleryArr[4]++}.jpg`]);
+		$("#img_6").attr("src", [`img/gallery/${galleryArr[5]++}.jpg`]);
+		galleryCounter++;
 	}
+	else if (state == 1) {
+		if (galleryCounter == 0) return 1;
+		$("#img_1").attr("src", [`img/gallery/${galleryArr[0]--}.jpg`]);
+		$("#img_2").attr("src", [`img/gallery/${galleryArr[1]--}.jpg`]);
+		$("#img_3").attr("src", [`img/gallery/${galleryArr[2]--}.jpg`]);
+		$("#img_4").attr("src", [`img/gallery/${galleryArr[3]--}.jpg`]);
+		$("#img_5").attr("src", [`img/gallery/${galleryArr[4]--}.jpg`]);
+		$("#img_6").attr("src", [`img/gallery/${galleryArr[5]--}.jpg`]);
+		galleryCounter--;
+	}
+
+	return 0;
+}
